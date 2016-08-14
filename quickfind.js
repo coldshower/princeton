@@ -3,7 +3,6 @@ for (var i = 0; i < 10; i++) {
 	array.push(i);
 }
 
-
 function find (i, j) {
 	return array[i] === array[j];
 }
