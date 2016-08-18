@@ -21,7 +21,7 @@ function union (i, j) {
 
 
 function findRoot (i) {
-	return (i === arr[i])? i : findRoot(arr[i]);
+	return (i === arr[i])? i : arr[i] = findRoot(arr[i]);
 }
 
 function connected (i, j) {
