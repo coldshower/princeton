@@ -1,29 +1,28 @@
-var arr = [];
-var size = [];
+var quickUnionWeighted = {
+	initialize: function (length) {
+		this.arr = [];
+		this.size = [];
+		for (var i = 0; i < length; i++) {
+			this.arr[i] = i;
+			this.size[i] = 1;
+		}
+	},
+	findRoot: function (idx) {
+		return (idx === this.arr[idx])? idx : this.findRoot(this.arr[idx]);
+	},
+	union: function (idx1, idx2) {
+		var root1 = this.findRoot(idx1),
+			root2 = this.findRoot(idx2);
 
-for (var i = 0; i < 10; i++) {
-	arr.push(i);
-	size.push(1);
-}
-
-function union (i, j) {
-	var rootI = findRoot(i),
-		rootj = findRoot(j);
-
-	if (size[rootI] > size[rootJ]) {
-		arr[rootI] = arr[rootJ];
-		size[rootJ] += size[rootI];
-	} else {
-		arr[rootJ] = arr[rootI];
-		size[rootI] += size[rootJ];
+		if (this.size[root1] <= this.size[root2]) {
+			this.arr[root1] = root2;
+			this.size[root2] += this.size[root1];
+		} else {
+			this.arr[root2] = root1;
+			this.size[root1] += this.size[root2];
+		}
+	},
+	connected: function (idx1, idx2) {
+		return this.findRoot(idx1) === this.findRoot(idx2);
 	}
-}
-
-
-function findRoot (i) {
-	return (i === arr[i])? i : arr[i] = findRoot(arr[i]);
-}
-
-function connected (i, j) {
-	return findRoot(i) === findRoot(j);
-}
+};

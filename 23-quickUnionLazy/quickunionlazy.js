@@ -8,14 +8,14 @@ var quickUnionLazy = {
 	},
 
 	findRoot: function (idx, array) {
-		return (idx === array[idx])? idx : findRoot(arr[idx]);
+		return (idx === array[idx])? idx : this.findRoot(array[idx], array);
 	},
 
 	union: function (idx1, idx2, array) {
-		array[findRoot(idx1, array)] = findRoot(idx2, array);
+		array[this.findRoot(idx1, array)] = this.findRoot(idx2, array);
 	},
 
 	connected: function (idx1, idx2, array) {
-		return findRoot(idx1, array) === findRoot(idx2, array);
+		return this.findRoot(idx1, array) === this.findRoot(idx2, array);
 	}
 };
