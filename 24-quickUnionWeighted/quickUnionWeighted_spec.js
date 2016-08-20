@@ -79,13 +79,25 @@ describe('quickUnionWeighted', function () {
 			expect(quickUnionWeighted.connected(6, 9)).toBe(true);
 		});
 
-		it('should connect transitively such that if 1 and 2 are already connected, then connecting 1 to 3 will also connect 2 to 3', function () {
+		it('should connect in a way so that smaller trees are connected to the larger tree\'s root.', function () {
+			var array = quickUnionWeighted.arr;
+
 			quickUnionWeighted.union(1, 2);
-			expect(quickUnionWeighted.connected(1, 2)).toBe(true);
-			expect(quickUnionWeighted.connected(1, 3)).toBe(false);
+			quickUnionWeighted.union(3, 4);
+			quickUnionWeighted.union(9, 1);
 			quickUnionWeighted.union(1, 3);
-			expect(quickUnionWeighted.connected(2, 3)).toBe(true);
-			expect(quickUnionWeighted.connected(1, 3)).toBe(true);
+			expect(array[9]).not.toEqual(1);
+			expect(array[9]).toEqual(2);
+			expect(quickUnionWeighted.connected(1, 9)).toBe(true);
+		});
+
+		it('should increase the size of the root node correctly.', function () {
+			var array = quickUnionWeighted.arr;
+
+			quickUnionWeighted.union(1, 2);
+			expect(quickUnionWeighted.size[2]).toEqual(2);
+			quickUnionWeighted.union(9, 1);
+			expect(quickUnionWeighted.size[2]).toEqual(3);
 		});
 	});
 });
