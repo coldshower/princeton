@@ -1,0 +1,22 @@
+{
+  "name": "princeton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "orderOfGrowth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coldshower/princeton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coldshower/princeton/issues"
+  },
+  "homepage": "https://github.com/coldshower/princeton#readme",
+  "dependencies": {
+    "testem": "^1.10.4"
+  }
+}
