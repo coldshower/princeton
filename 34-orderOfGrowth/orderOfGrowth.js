@@ -40,4 +40,4 @@ function returnIndexIterative (key, sortedArray) {
 	return -1;
 }
 
-returnIndex (6, array);
+// returnIndex (6, array);

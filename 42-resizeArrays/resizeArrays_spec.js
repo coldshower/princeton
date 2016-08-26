@@ -28,7 +28,8 @@ describe('Naive Dynamic Arrays:', function () {
 
 		it('pushes correctly', function () {
 			naive.push(5);
-			expect(naive.storage[0]).toEqual(5));
+			console.log(naive);
+			expect(naive.storage[0]).toEqual(5);
 		});
 
 		it('works for multiple pushes', function () {
@@ -42,6 +43,23 @@ describe('Naive Dynamic Arrays:', function () {
 			expect(naive.size).toEqual(7);
 		});
 
+		it('decreases in size by 1 each time something is popped', function () {
+			naive.push(1);
+			naive.push(2);
+			naive.push(3);
+			naive.push(4);
+			naive.push(5);
+			naive.push(6);
+			expect(naive.pop()).toEqual(6);
+			expect(naive.size).toEqual(6);
+		});
+
+		it('does not pop if the array is empty', function () {
+			expect(naive.pop()).toEqual(undefined);
+			naive.push(1);
+			naive.pop();
+			expect(naive.pop()).toEqual(undefined);
+		});	
 	});
 });
 
