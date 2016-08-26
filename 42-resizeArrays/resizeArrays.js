@@ -5,12 +5,12 @@
 
 // push and pop causes array size to increase / decrease by 1
 
-function naiveArray (size) {
-	this.size = size;
-	this.storage = new Array(size);
+function NaiveArray () {
+	this.size = 1;
+	this.storage = new Array();
 }
 
-naiveArray.prototype.push = function (val) {
+NaiveArray.prototype.push = function (val) {
 	var newArray = new Array(this.size + 1);
 	for (var i = 0; i < this.size; i++) {
 		newArray[i] = this.storage[i];
@@ -20,7 +20,7 @@ naiveArray.prototype.push = function (val) {
 	this.storage = newArray;
 };
 
-naiveArray.prototype.pop = function () {
+NaiveArray.prototype.pop = function () {
 	var newArray = new Array(this.size - 1);
 	var popped = this.storage[this.size - 1];
 	for (var i = 0; i < this.size - 1; i++) {
@@ -41,15 +41,15 @@ naiveArray.prototype.pop = function () {
 // fix by just halving when it goes 1/4 full.
 // array will always be 25 to 100% full
 
-function dynamicArray (size) {
-	this.size = size;
-	this.storage = new Array(size);
+function DynamicArray () {
+	this.size = 1;
+	this.storage = new Array();
 	this.current = 0;
 }
 
-dynamicArray.prototype.push = function (val) {
+DynamicArray.prototype.push = function (val) {
 	if (this.current === this.size) {
-		var newArray = new Array(size * 2);
+		var newArray = new Array(this.size * 2);
 		for (var i = 0; i < this.size; i++) {
 			newArray[i] = this.storage[i];
 		}
@@ -60,7 +60,7 @@ dynamicArray.prototype.push = function (val) {
 	this.current += 1;
 };
 
-dynamicArray.prototype.pop = function () {
+DynamicArray.prototype.pop = function () {
 	if (this.current) {
 		var popped = this.storage[this.current - 1];
 		this.current -= 1;

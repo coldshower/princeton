@@ -1,4 +1,4 @@
-describe('quickUnionLazy', function () {
+describe('quickUnionLazy:', function () {
 	it('is an object', function () {
 		expect(typeof quickUnionLazy).toEqual('object');
 	});
