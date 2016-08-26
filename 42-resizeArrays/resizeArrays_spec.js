@@ -28,7 +28,6 @@ describe('Naive Dynamic Arrays:', function () {
 
 		it('pushes correctly', function () {
 			naive.push(5);
-			console.log(naive);
 			expect(naive.storage[0]).toEqual(5);
 		});
 
