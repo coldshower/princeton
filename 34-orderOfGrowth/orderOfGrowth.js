@@ -1,6 +1,6 @@
 var array = [4, 7, 10, 14, 15, 20, 26, 50];
 
-function returnIndex (key, sortedArray) {
+function bsFind (key, sortedArray) {
 
 	function recurse (start, end) {
 		var middle = Math.floor((end - start) / 2 + start);
@@ -11,7 +11,7 @@ function returnIndex (key, sortedArray) {
 
 		if (key === sortedArray[middle]) {
 			return middle;
-		} else if (key > sortedrray[middle]) {
+		} else if (key > sortedArray[middle]) {
 			return recurse(middle + 1, end);
 		} else {
 			return recurse(start, middle - 1);
@@ -40,4 +40,4 @@ function returnIndexIterative (key, sortedArray) {
 	return -1;
 }
 
-returnIndex (6, array);
+// returnIndex (6, array);
