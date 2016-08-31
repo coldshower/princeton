@@ -1,28 +1,43 @@
-function mergeSort (arr) {
-	if (arr.length <= 1) {
-		return arr;
+function mergeSort (arr, first, last) {
+	if (first >= last) {
+		return;
 	}
-
-	var middle = Math.round(arr.length / 2),
-		sorted1 = mergeSort(arr.slice(0, middle)),
-		sorted2 = mergeSort(arr.slice(middle));
-
-	return merge(sorted1, sorted2);
+	
+	var second = Math.floor(first + (last - first) / 2);
+	
+	mergeSort(arr, first, second);
+	mergeSort(arr, second + 1, last);
+	
+	return merge(arr, first, second + 1, last);
 }
 
-function merge (sorted1, sorted2) {
-	var result = [],
-		i = 0, j = 0;
-	while (result.length < sorted1.length + sorted2.length) {
-		if (sorted1[i] <= sorted2[j] || sorted2[j] === undefined) {
-			result.push(sorted1[i]);
+function merge (arr, first, second, last) {
+	var result = arr.slice();
+	
+	var i = first, j = second;
+
+	for (var k = first; k <= last; k++) {
+		if (j > last) {
+			arr[k] = result[i];
+			i += 1;
+		} else if (i >= second) {
+			arr[k] = result[j];
+			j += 1;
+		} else if (result[i] <= result[j]) {
+			arr[k] = result[i];
 			i += 1;
 		} else {
-			result.push(sorted2[j]);
+			arr[k] = result[j];
 			j += 1;
 		}
 	}
-
-	return result;
+	return arr;
 }
 
+// optimizations: 
+
+// use insertion sort for smaller arrays since no function
+// overhead needed from recursive call
+
+// should stop if already sorted. if biggest in first half is 
+// less than smallest in second half, it is already merged
