@@ -35,5 +35,11 @@ function randomShuffle (arr, p, r) {
 }
 
 // insertion sort over quicksort if array size less than 10. not as much overhead. 
-// best choice for pivot is median, so finding median can be worth it. one way to do it
-// would be to sample the data and just find the median of the sampled 3 values
+// deal with duplicate keys using Dijikstra's 3 way partitioning
+
+// best choice for pivot is median, so finding median can be worth it. 
+// for medium arrays, can sample 3 and take median from them to use
+// for large arrays, can use Tukey's ninther
+
+// however, there are still killer inputs, and only way to avoid is by
+// randomizing
