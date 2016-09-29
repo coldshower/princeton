@@ -26,8 +26,11 @@ BinaryHeap.prototype.deleteMax = function () {
 
 BinaryHeap.prototype.swim = function (index) {
 	var parentIndex;
-	while (this.heap[index] > this.heap[Math.floor(index / 2)]) {
+	while (index > 1) {
 		parentIndex = Math.floor(index / 2);
+		if (this.heap[index] <= this.heap[parentIndex]) {
+			break;
+		}
 		this.swap(index, parentIndex);
 		index = parentIndex;
 	}
@@ -56,5 +59,5 @@ BinaryHeap.prototype.swap = function (first, second) {
 
 BinaryHeap.prototype.smaller = function (num1, num2) {
 	return this.heap[num1] < this.heap[num2];
-}
+};
 
