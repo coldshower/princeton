@@ -61,3 +61,15 @@ BinaryHeap.prototype.smaller = function (num1, num2) {
 	return this.heap[num1] < this.heap[num2];
 };
 
+
+// insert = lgN
+// delMax = lgN
+// max = 1
+
+//considerations: 
+// throw exception if underflow and remove from empty heap
+// use dynamic arrays for overflow
+
+// should make the values of the nodes immutable because PQ does not automatically keep
+// track that you made those changes
+
