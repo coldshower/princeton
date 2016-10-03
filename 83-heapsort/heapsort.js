@@ -56,5 +56,4 @@ function smaller(arr, first, second) {
 }
 
 function sort(arr) {
-	// delMax until done. 
 }
