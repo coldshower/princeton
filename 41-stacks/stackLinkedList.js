@@ -1,4 +1,4 @@
-function Stack () {
+function StackLL () {
 	this.first = null;
 	this.size = null;
 }
@@ -8,7 +8,7 @@ function Node (val) {
 	this.next = null;
 }
 
-Stack.prototype.push = function (nodeVal) {
+StackLL.prototype.push = function (nodeVal) {
 	var newFirst = new Node(nodeVal),
 		oldFirst = this.first;
 
@@ -16,7 +16,7 @@ Stack.prototype.push = function (nodeVal) {
 	this.first = newFirst;
 };
 
-Stack.prototype.pop = function () {
+StackLL.prototype.pop = function () {
 	if (this.first) {
 		var oldFirst = this.first;
 		this.first = oldFirst.next;
