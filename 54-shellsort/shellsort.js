@@ -9,9 +9,7 @@ function shellSort (arr) {
 			var j = i;
 
 			while (arr[j] < arr[j - h]) {
-				var temp = arr[j];
-				arr[j] = arr[j - h];
-				arr[j - h] = temp;
+				swap(arr, j, j - h);
 				j -=1;
 			}
 		}
@@ -19,4 +17,10 @@ function shellSort (arr) {
 	}
 
 	return arr;
+}
+
+function swap(arr, first, second) {
+	var temp = arr[first];
+	arr[first] = arr[second];
+	arr[second] = temp;
 }
