@@ -12,9 +12,11 @@ LinkedList.prototype.addToTail = function (value) {
 	var newTail = new Node(value);
 	if (this.last) {
 		this.last.next = newTail;
+		this.last = newTail;
+	} else {
+		this.last = newTail;
+		this.first = newTail;
 	}
-	this.last = newTail;
-	this.first = newTail;
 };
 
 LinkedList.prototype.removeHead = function () {

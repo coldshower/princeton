@@ -24,10 +24,10 @@ StackLL.prototype.pop = function () {
 	}
 };
 
-Stack.prototype.getSize = function () {
+StackLL.prototype.getSize = function () {
 	return this.size;
 }
 
-Stack.prototype.isEmpty = function () {
+StackLL.prototype.isEmpty = function () {
 	return (!this.first);
 }

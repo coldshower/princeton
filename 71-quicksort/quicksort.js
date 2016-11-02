@@ -1,35 +1,36 @@
-function quickSort (arr, p, r) {
-	randomShuffle(arr, p, r);
-	var pivot = partition(arr, p, r);
-	quickSort(arr, p, pivot - 1);
-	quickSort(arr, pivot + 1, r);
+function quickSort (arr, first, last) {
+	if (first >= last) {
+		return arr;
+	}
+	randomShuffle(arr, first, last);
+	var pivot = partition(arr, first, last);
+	quickSort(arr, first, pivot - 1);
+	quickSort(arr, pivot + 1, last);
 	return arr;
 }
 
-function partition (arr, p, r) {
-	var q = left;
-	for (var right = left; right < r; right++) {
-		if (arr[right] <= arr[r]) {
-			swap(arr, q, right);
-			q += 1;
+function partition (arr, first, last) {
+	var left = first;
+	for (var right = first; right < last; right++) {
+		if (arr[right] < arr[last]) {
+			swap(arr, left, right);
+			left += 1;
 		}
 	}
-	swap(array, q, r);
-	return q;
+	swap(arr, left, last);
+	return left;
 }
 
-function swap (arr, firstIndex, secondIndex) {
-	var temp = arr[firstIndex];
-	arr[firstIndex] = arr[secondIndex];
-	arr[firstIndex] = temp;
+function swap (arr, first, second) {
+	var temp = arr[first];
+	arr[first] = arr[second];
+	arr[second] = temp;
 }
 
-function randomShuffle (arr, p, r) {
-	for (var i = p; i < r; i++) {
-		var randomNum = Math.floor(Math.random() * (i + 1));
-		var temp = arr[i];
-		arr[i] = arr[randomNum];
-		arr[randomNum] = temp;
+function randomShuffle (arr, first, last) {
+	for (var i = first; i <= last; i++) {
+		var randomNum = Math.floor(Math.random() * (last + 1 - i)) + i;
+		swap(arr, i, randomNum);
 	}
 	return arr;
 }

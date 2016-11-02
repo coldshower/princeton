@@ -1,4 +1,4 @@
-describe('Insertion Sort', function () {
+describe('5-3: Insertion Sort', function () {
   it('is a function', function () {
     expect(typeof insertionSort).toEqual('function');
   });

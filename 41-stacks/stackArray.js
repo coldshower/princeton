@@ -5,11 +5,12 @@ function Stack () {
 
 Stack.prototype.push = function (val) {
 	this.stack[this.size] = val;
+	this.size += 1;
 };
 
 Stack.prototype.pop = function () {
 	if (this.size) {
-		var popped = this.stack[this.size];
+		var popped = this.stack[this.size - 1];
 		this.size -= 1;
 		return popped;
 	}
@@ -18,5 +19,5 @@ Stack.prototype.pop = function () {
 };
 
 Stack.prototype.isEmpty = function () {
-	return !this.size;
+	return this.size === 0;
 };

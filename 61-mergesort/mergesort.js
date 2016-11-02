@@ -1,6 +1,6 @@
 function mergeSort (arr, first, last) {
 	if (first >= last) {
-		return;
+		return arr;
 	}
 	
 	var second = Math.floor(first + (last - first) / 2);

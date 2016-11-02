@@ -1,4 +1,4 @@
-describe('Selection Sort', function () {
+describe('5-2: Selection Sort', function () {
   it('is a function', function () {
     expect(typeof selectSort).toEqual('function');
   });

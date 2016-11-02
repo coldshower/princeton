@@ -3,11 +3,11 @@ var array = [4, 7, 10, 14, 15, 20, 26, 50];
 function bsFind (key, sortedArray) {
 
 	function recurse (start, end) {
-		var middle = Math.floor((end - start) / 2 + start);
-
-		if (start >= end) {
+		if (start > end) {
 			return -1;
 		}
+
+		var middle = Math.floor((end - start) / 2) + start;
 
 		if (key === sortedArray[middle]) {
 			return middle;

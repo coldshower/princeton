@@ -1,4 +1,4 @@
-describe('Bottom Up Merge Sort', function () {
+describe('6-2: Bottom Up Merge Sort', function () {
 
   it('is a function', function () {
     expect(typeof bottomUpMergeSort).toEqual('function');

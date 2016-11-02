@@ -1,4 +1,4 @@
-describe('binarySearch:', function () {
+describe('3-4: binarySearch:', function () {
 	describe('bsFind', function () {
 		it('is a function', function () {
 			expect(typeof bsFind).toEqual('function');

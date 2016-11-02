@@ -30,12 +30,10 @@ function swap(arr, first, second) {
 	arr[second] = temp;
 }
 
-function randomShuffle(arr, p, r) {
-	for (var i = p; i < r; i++) {
-		var randomNum = Math.floor(Math.random() * (i + 1));
-		var temp = arr[i];
-		arr[i] = arr[randomNum];
-		arr[randomNum] = temp;
+function randomShuffle (arr, first, last) {
+	for (var i = first; i < last; i++) {
+		var randomNum = Math.floor(Math.random() * (last - i)) + i;
+		swap(arr, i, randomNum);
 	}
 	return arr;
 }

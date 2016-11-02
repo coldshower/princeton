@@ -3,7 +3,7 @@ describe('QuickSort:', function () {
 		expect(typeof randomShuffle).toEqual('function');
 		expect(typeof swap).toEqual('function');
 		expect(typeof partition).toEqual('function');
-		expect(typeof quicksort).toEqual('function');
+		expect(typeof quickSort).toEqual('function');
 	});
 
 	describe('swap', function () {
@@ -41,6 +41,30 @@ describe('QuickSort:', function () {
 	});
 
 	describe('quicksort', function () {
+		function checkSorted(array) {
+		  for (var i = 1; i < array.length; i++) {
+		    if(array[i] < array[i - 1]) {
+		      return false;
+		    }
+		  }
+		  return true;
+		}
 
+	  it('takes an array and returns the same array sorted', function () {
+	    var array1 = [7,3,2,9,-2,3,7];
+	    var sorted1 = quickSort(array1, 0, array1.length - 1);
+	    expect(sorted1).toEqual(array1);
+	    expect(checkSorted(sorted1)).toEqual(true);
+
+	    var array2 = [0,0,0,-2,5,3,7,100,200,3,-5];
+	    var sorted2 = quickSort(array2, 0, array2.length - 1);
+	    expect(sorted2).toEqual(array2);
+	    expect(checkSorted(sorted2)).toEqual(true);
+
+	    var array3 = [];
+	    var sorted3 = quickSort(array3, 0, array3.length - 1);
+	    expect(sorted3).toEqual(array3);
+	    expect(checkSorted(sorted3)).toEqual(true);
+	  });
 	});
 });
