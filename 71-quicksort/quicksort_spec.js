@@ -1,6 +1,6 @@
 describe('QuickSort:', function () {
 	it('has randomShuffle, swap, partition, and quicksort functions', function () {
-		expect(typeof swap).toEqual('function');
+		expect(typeof randomShuffle).toEqual('function');
 		expect(typeof swap).toEqual('function');
 		expect(typeof partition).toEqual('function');
 		expect(typeof quicksort).toEqual('function');
