@@ -1,6 +1,6 @@
-describe('Selection Sort', function () {
+describe('Insertion Sort', function () {
   it('is a function', function () {
-    expect(typeof selectSort).toEqual('function');
+    expect(typeof insertionSort).toEqual('function');
   });
 
   describe('uses a helper function called swap', function () {
@@ -25,17 +25,17 @@ describe('Selection Sort', function () {
     }
 
     var array1 = [7,3,2,9,-2,3,7];
-    var sorted1 = selectSort(array1);
+    var sorted1 = insertionSort(array1);
     expect(sorted1).toEqual(array1);
     expect(checkSorted(sorted1)).toEqual(true);
 
     var array2 = [0,0,0,-2,5,3,7,100,200,3,-5];
-    var sorted2 = selectSort(array2);
+    var sorted2 = insertionSort(array2);
     expect(sorted2).toEqual(array2);
     expect(checkSorted(sorted2)).toEqual(true);
 
     var array3 = [];
-    var sorted3 = selectSort(array3);
+    var sorted3 = insertionSort(array3);
     expect(sorted3).toEqual(array3);
     expect(checkSorted(sorted3)).toEqual(true);
   });

@@ -7,9 +7,13 @@ function selectSort (arr) {
 				minIndex = j;
 			}
 		}
-		temp = arr[i];
-		arr[i] = arr[minIndex];
-		arr[minIndex] = temp;
+		swap(arr, i, minIndex);
 	}
 	return arr;
+}
+
+function swap (arr, first, second) {
+	var temp = arr[first];
+	arr[first] = arr[second];
+	arr[second] = temp;
 }
