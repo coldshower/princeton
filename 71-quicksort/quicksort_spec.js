@@ -1,4 +1,4 @@
-describe('QuickSort:', function () {
+describe('7-1: QuickSort:', function () {
 	it('has randomShuffle, swap, partition, and quicksort functions', function () {
 		expect(typeof randomShuffle).toEqual('function');
 		expect(typeof swap).toEqual('function');
