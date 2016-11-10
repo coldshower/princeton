@@ -1,4 +1,4 @@
-describe('quickFind:', function () {
+describe('2-2: quickFind:', function () {
 	it('is an object', function () {
 		expect(typeof quickFind).toEqual('object');
 	});
