@@ -1,3 +1,3 @@
-describe('Quick Select', function () {
+describe('7-2: Quick Select', function () {
 
 });
