@@ -1,4 +1,4 @@
-describe('quickUnionWeighted:', function () {
+describe('2-4: quickUnionWeighted:', function () {
 	it('is an object', function () {
 		expect(typeof quickUnionWeighted).toEqual('object');
 	});
