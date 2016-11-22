@@ -1,4 +1,4 @@
-describe('Iterators:', function () {
+describe('4-5: Iterators:', function () {
 	describe('makeIterator', function () {
 		var array, iterate;
 
