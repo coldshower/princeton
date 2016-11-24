@@ -1,4 +1,4 @@
-describe('Naive Dynamic Arrays:', function () {
+describe('4-2: Naive Dynamic Arrays:', function () {
 	describe('NaiveArray', function () {
 		var naive;
 
